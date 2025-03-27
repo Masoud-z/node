@@ -1,7 +1,15 @@
-const url = "https://testUtl.com";
+import EventEmitter from "events";
 
-export function log(message: string) {
-  console.log(message);
+class Logger extends EventEmitter {
+  url = "https://testUtl.com";
+  log(message: string) {
+    console.log();
+    console.log("+++++++------**Logger Class**------+++++++");
+    console.log(message);
+    console.log("+++++++------****************------+++++++");
+    console.log();
+    this.emit("MasoudEvent", { id: 1, url: "https://test.com" });
+  }
 }
 
-module.exports.log = log;
+export default Logger;

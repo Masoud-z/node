@@ -1,10 +1,7 @@
 import path from "path";
 import os from "os";
 import fs from "fs";
-import { log } from "./logger";
-import EventEmitter from "events";
-
-log("Hello World");
+import Logger from "./logger";
 
 console.log("__dirname: ", __dirname);
 console.log("__filename: ", __filename);
@@ -20,11 +17,9 @@ fs.readdir("./", (err, files) => {
   console.log("files: ", files);
 });
 
-const emitter = new EventEmitter();
+const logger = new Logger();
 
-console.log("emitter: ", emitter);
-
-emitter.on("MasoudEvent", ({ id, url }) => {
+logger.on("MasoudEvent", ({ id, url }) => {
   console.log();
   console.log("+++++++------****------+++++++");
   console.log("MasoudEvent is emitted");
@@ -34,4 +29,4 @@ emitter.on("MasoudEvent", ({ id, url }) => {
   console.log();
 });
 
-emitter.emit("MasoudEvent", { id: 1, url: "https://test.com" });
+logger.log("Hello World!");
