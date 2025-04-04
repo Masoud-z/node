@@ -8,6 +8,13 @@ interface Course {
   name: string;
 }
 
+console.log("process.env.NODE_ENV : ", process.env.NODE_ENV);
+console.log("app.get('env') : ", app.get("env"));
+process.env.NODE_ENV = "production";
+console.log("process.env.NODE_ENV === 'production';");
+console.log("process.env.NODE_ENV : ", process.env.NODE_ENV);
+console.log("app.get('env') : ", app.get("env"));
+
 const courses: Course[] = [
   { id: "1", name: "course1" },
   { id: "2", name: "course2" },
