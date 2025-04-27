@@ -17,6 +17,8 @@
   },
   "dependencies": {
     "express": "^4.21.2",
-    "joi": "^17.13.3"
+    "joi": "^17.13.3",
+    "mongodb": "^6.15.0",
+    "mongoose": "^8.13.2"
   }
 }
